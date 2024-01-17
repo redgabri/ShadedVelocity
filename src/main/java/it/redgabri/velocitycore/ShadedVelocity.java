@@ -6,6 +6,7 @@ import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
+import it.redgabri.velocitycore.cmd.FindCmd;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
@@ -31,6 +32,7 @@ public class ShadedVelocity {
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
+        proxy.getCommandManager().register("find", new FindCmd());
     }
 
     public static ProxyServer getProxy() {
