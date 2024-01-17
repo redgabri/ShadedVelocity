@@ -7,7 +7,10 @@ import com.velocitypowered.api.proxy.server.RegisteredServer;
 import it.redgabri.velocitycore.ShadedVelocity;
 import it.redgabri.velocitycore.utils.Cache;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.checkerframework.checker.units.qual.A;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class SendCmd implements SimpleCommand {
@@ -72,5 +75,23 @@ public class SendCmd implements SimpleCommand {
         }
 
         source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SEND_ERROR_ARG_NOT_FOUND));
+    }
+
+    @Override
+    public List<String> suggest(Invocation invocation) {
+        String[] args = invocation.arguments();
+        List<String> suggestions = new ArrayList<>();
+        if (args.length == 0){
+            suggestions.add("all");
+            suggestions.add("current");
+        }
+        if (args.length == 1) {
+            for (Player all : ShadedVelocity.getProxy().getAllPlayers()) {
+                if (all.getUsername().toLowerCase().startsWith(args[0].toLowerCase())) {
+                    suggestions.add(all.getUsername());
+                }
+            }
+        }
+        return suggestions;
     }
 }

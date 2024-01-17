@@ -34,7 +34,7 @@ public class ShadedVelocity {
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
         proxy.getCommandManager().register("find", new FindCmd());
-        proxy.getCommandManager().register("find", new SendCmd());
+        proxy.getCommandManager().register("sned", new SendCmd());
     }
 
     public static ProxyServer getProxy() {
