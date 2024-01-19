@@ -7,4 +7,5 @@ public class Cache {
     public static String GLOBAL_PREFIX;
     public static String KICK_MESSAGE, DEFAULT_KICK_REASON;
     public static String CLIENTMESSAGE;
+    public static String SAME_SERVER, SENDED_SUCCESSFULLY;
 }

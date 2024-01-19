@@ -37,6 +37,7 @@ public class ShadedVelocity {
         proxy.getCommandManager().register("global", new GlobalCmd(), "alert", "announce");
         proxy.getCommandManager().register("kickall", new GlobalKickCmd(), "globalkick");
         proxy.getCommandManager().register("checkbrand", new ClientCmd(), "checkclient");
+        proxy.getCommandManager().register("tpto", new TpToCmd());
     }
 
     public static ProxyServer getProxy() {
