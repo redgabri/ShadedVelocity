@@ -8,6 +8,7 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
 import it.redgabri.velocitycore.cmd.FindCmd;
 import it.redgabri.velocitycore.cmd.GlobalCmd;
+import it.redgabri.velocitycore.cmd.GlobalKickCmd;
 import it.redgabri.velocitycore.cmd.SendCmd;
 import org.slf4j.Logger;
 
@@ -37,6 +38,7 @@ public class ShadedVelocity {
         proxy.getCommandManager().register("find", new FindCmd());
         proxy.getCommandManager().register("send", new SendCmd());
         proxy.getCommandManager().register("global", new GlobalCmd(), "alert", "announce");
+        proxy.getCommandManager().register("kickall", new GlobalKickCmd(), "globalkick");
     }
 
     public static ProxyServer getProxy() {
