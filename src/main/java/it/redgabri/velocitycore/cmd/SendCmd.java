@@ -68,7 +68,7 @@ public class SendCmd implements SimpleCommand {
                 online.createConnectionRequest(target.get()).connect();
                 source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SEND_MESSAGE
                         .replaceAll("%server%", target.get().getServerInfo().getName())
-                        .replaceAll("%send_count%", online.getUsername()) //Abusing java stupid way of handling strings pt2
+                        .replaceAll("%send_count%", online.getUsername())
                 ));
             }
             return;
