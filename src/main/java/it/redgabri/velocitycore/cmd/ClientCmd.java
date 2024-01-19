@@ -18,6 +18,11 @@ public class ClientCmd implements SimpleCommand {
         CommandSource source = invocation.source();
         String[] args = invocation.arguments();
 
+        if (!source.hasPermission("shadedvelocity.command.checkbrand")) {
+            source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.NO_PERMISSION));
+            return;
+        }
+
         if (args.length < 1){
             source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.INVALID_ARGS));
             return;
