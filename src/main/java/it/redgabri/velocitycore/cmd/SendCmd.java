@@ -92,6 +92,11 @@ public class SendCmd implements SimpleCommand {
                 }
             }
         }
+        if (args.length == 2){
+            for (RegisteredServer server : ShadedVelocity.getProxy().getAllServers()){
+                suggestions.add(server.getServerInfo().getName());
+            }
+        }
         return suggestions;
     }
 }

@@ -17,7 +17,7 @@ import java.nio.file.Path;
 @Plugin(
         id = "shadedvelocity",
         name = "ShadedVelocity",
-        version = BuildConstants.VERSION,
+        version = "1.4-SNAPSHOT",
         authors = {"redgabri"}
 )
 public class ShadedVelocity {
