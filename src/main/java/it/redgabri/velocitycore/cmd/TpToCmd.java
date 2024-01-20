@@ -47,6 +47,6 @@ public class TpToCmd implements SimpleCommand {
         }
 
         player.createConnectionRequest(target.getCurrentServer().get().getServer());
-        player.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SENDED_SUCCESSFULLY));
+        player.sendMessage(MiniMessage.miniMessage().deserialize(Cache.TPTO_SENDED_SUCCESSFULLY));
     }
 }
