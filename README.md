@@ -32,4 +32,4 @@
 
 Feel free to fork the plugin without credits, idc 
 
-The plugin use a service called bStats to track the number of servers using the plguin!
+The plugin use a service called bStats to track the number of servers using the plugin!
