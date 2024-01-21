@@ -28,7 +28,7 @@ public class FindCmd implements SimpleCommand {
 
         for (Player all : ShadedVelocity.getProxy().getAllPlayers()) {
             if (args[0].equalsIgnoreCase(all.getUsername())) {
-                source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.FIND_MESSAGE));
+                source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.FIND_MESSAGE.replaceAll("%player%", args[0]).replaceAll("%server%", ShadedVelocity.getProxy().getPlayer(args[0]).get().getCurrentServer().get().getServer().getServerInfo().getName())));
             } else {
                 source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.FIND_ERROR_NOT_FOUND));
             }

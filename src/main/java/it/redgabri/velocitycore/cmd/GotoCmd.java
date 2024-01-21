@@ -42,12 +42,12 @@ public class GotoCmd implements SimpleCommand {
         Player player = (Player) source;
 
         if (player.getCurrentServer().get() == target){
-            source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SAME_SERVER_GOTO));
+            source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SAME_SERVER_GOTO.replaceAll("%server%", target.getServerInfo().getName())));
             return;
         }
 
         player.createConnectionRequest(target);
-        player.sendMessage(MiniMessage.miniMessage().deserialize(Cache.GOTO_SENDED_SUCCESSFULLY));
+        player.sendMessage(MiniMessage.miniMessage().deserialize(Cache.GOTO_SENDED_SUCCESSFULLY.replaceAll("%server%", target.getServerInfo().getName())));
     }
 
     @Override

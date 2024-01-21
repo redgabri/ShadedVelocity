@@ -19,6 +19,9 @@ public class GlobalKickCmd implements SimpleCommand {
         }
 
         for (Player all : ShadedVelocity.getProxy().getAllPlayers()) {
+            source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.KICK_MESSAGE
+                    .replaceAll("%kick_size%", ShadedVelocity.getProxy().getAllPlayers().size()+"")
+            ));
             if (all == source || all.hasPermission("shadedvelocity.bypass.kickall")) return;
             if (args.length > 0) {
                 StringBuilder builder = new StringBuilder();
@@ -30,10 +33,6 @@ public class GlobalKickCmd implements SimpleCommand {
             else {
                 all.disconnect(MiniMessage.miniMessage().deserialize(Cache.DEFAULT_KICK_REASON));
             }
-
-            source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.KICK_MESSAGE
-                    .replaceAll("%kick_size%", ShadedVelocity.getProxy().getAllPlayers().size()+"")
-            ));
         }
     }
 }

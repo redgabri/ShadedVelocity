@@ -36,7 +36,7 @@ public class ClientCmd implements SimpleCommand {
         Optional<Player> target = ShadedVelocity.getProxy().getPlayer(args[0]);
 
         source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.CLIENTMESSAGE
-                .replaceAll("%target%", target.get().getUsername())
+                .replaceAll("%player%", target.get().getUsername())
                 .replaceAll("%client%", target.get().getClientBrand()+"")
         ));
     }

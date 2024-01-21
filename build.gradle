@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'eclipse'
     id "org.jetbrains.gradle.plugin.idea-ext" version "1.0.1"
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'it.redgabri'
@@ -17,7 +18,10 @@ repositories {
 
 dependencies {
     compileOnly "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
     annotationProcessor "com.velocitypowered:velocity-api:3.2.0-SNAPSHOT"
+    implementation "dev.dejvokep:boosted-yaml:1.3"
 }
 
 def targetJavaVersion = 11
@@ -53,3 +57,7 @@ sourceSets.main.java.srcDir(generateTemplates.map { it.outputs })
 
 rootProject.idea.project.settings.taskTriggers.afterSync generateTemplates
 project.eclipse.synchronizationTasks(generateTemplates)
+
+shadowJar {
+    relocate 'dev.dejvokep.boostedyaml', 'it.redgabri.libs'
+}

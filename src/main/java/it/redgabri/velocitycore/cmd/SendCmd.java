@@ -43,7 +43,7 @@ public class SendCmd implements SimpleCommand {
             }
             source.sendMessage(MiniMessage.miniMessage().deserialize(Cache.SEND_MESSAGE
                     .replaceAll("%server%", target.get().getServerInfo().getName())
-                    .replaceAll("%send_count%", ShadedVelocity.getProxy().getAllPlayers().size()+"") //Abusing java stupid way of handling strings
+                    .replaceAll("%send_size%", ShadedVelocity.getProxy().getAllPlayers().size()+"") //Abusing java stupid way of handling strings
             ));
             return;
         }

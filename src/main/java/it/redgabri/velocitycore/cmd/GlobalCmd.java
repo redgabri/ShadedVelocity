@@ -34,9 +34,7 @@ public class GlobalCmd implements SimpleCommand {
         }
 
         for (Player all : ShadedVelocity.getProxy().getAllPlayers()){
-            all.sendMessage(MiniMessage.miniMessage().deserialize(Cache.GLOBAL_PREFIX
-                    .replaceAll("%player%", sender)
-            + message));
+            all.sendMessage(MiniMessage.miniMessage().deserialize(Cache.GLOBAL_PREFIX.replaceAll("%player%", sender) + message));
         }
     }
 }

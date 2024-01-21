@@ -1,0 +1,27 @@
+command-messages:
+  find-command:
+    message-success: "<aqua>%player%<white> is connected to <aqua>%server%."
+    player-not-found: "<red>%player% was not found on the server."
+  send-command:
+    message-success: "<aqua>%send_size%<white> players were sended on <aqua>%server%."
+    server-not-found: "<red>The server you are trying to send a player on doesn't exist."
+    args-not-found: "<red>Invalid args, you can only use 'all', 'current' or a player name!"
+  global-command: # global command = '/alert', '/global', '/announce'
+    message-prefix: "<aqua><bold>GLOBAL <reset><aqua>%player%: <white>"
+  kickall-command:
+    message-success: "<white>Kicked <aqua>%kick_size% <white> players from the proxy!"
+    default-kick-reason: "<red>Kicked by an operator"
+  client-command:
+    message-success: "<aqua>%player% <white>is online using <aqua>%client%"
+  tpto-command:
+    message-success: "<white>Successfully tped yourself on <aqua>%target%'<white>s current server. <gray><italic>(%target_server%"
+    same-server: "<white>You are already on <aqua>%target%'<white>s current server"
+  goto-command:
+    message-success: "<white>Successfully tped yourself on <aqua>%server%'."
+    same-server: "<white>You are already on <aqua>%server%!"
+errors:
+  no-permission: "<red>You don't have the permission to execute that command."
+  invalid-command-syntax: "<red>Invalid command arguments, type '/sv help' to see the command usage."
+  invalid-player: "<red>The player you are trying to execute the command on is no online."
+
+config-version: 1
