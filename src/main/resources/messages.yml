@@ -9,7 +9,7 @@ command-messages:
   global-command: # global command = '/alert', '/global', '/announce'
     message-prefix: "<aqua><bold>GLOBAL <reset><aqua>%player%: <white>"
   kickall-command:
-    message-success: "<white>Kicked <aqua>%kick_size% <white> players from the proxy!"
+    message-success: "<white>Kicked <aqua>%kick_size% <white>players from the proxy!"
     default-kick-reason: "<red>Kicked by an operator"
   client-command:
     message-success: "<aqua>%player% <white>is online using <aqua>%client%"

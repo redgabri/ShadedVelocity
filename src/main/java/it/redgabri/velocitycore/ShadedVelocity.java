@@ -46,6 +46,7 @@ public class ShadedVelocity {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         ConfigLoader.load();
         Cache.init();
+        proxy.getCommandManager().register("shadedvelocity", new MainCommand(), "sv");
         proxy.getCommandManager().register("find", new FindCmd());
         proxy.getCommandManager().register("send", new SendCmd());
         proxy.getCommandManager().register("global", new GlobalCmd(), "alert", "announce");
